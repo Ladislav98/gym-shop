@@ -2,18 +2,19 @@ import {
   HeaderInner,
   HeaderLink,
   HeaderLogo,
-  //   HeaderLink,
   HeaderNav,
   HeaderProfile,
   HeaderWrapper,
 } from "./HeaderStyle";
+
+import imgSrc from "./../../assets/images/logo.png";
 
 const Header = () => {
   return (
     <>
       <HeaderWrapper>
         <HeaderInner>
-          <HeaderLogo>Logo</HeaderLogo>
+          <HeaderLogo src={imgSrc} />
           <HeaderNav>
             <HeaderLink to="/">Home</HeaderLink>
             <HeaderLink to="/">Hello</HeaderLink>
