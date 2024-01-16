@@ -24,7 +24,7 @@ const Hero = () => {
       <HeroContent>
         <HeroContentInner>
           <HeroTextCard>
-            <HeroTitle>Transform Your Fitness Journey with GymZe.</HeroTitle>
+            <HeroTitle>Transform Your Fitness Journey with Gym ZE.</HeroTitle>
             <HeroSubtitle>
               Fuel Your Fire, Shape Your Story. Elevate your fitness game.
             </HeroSubtitle>
