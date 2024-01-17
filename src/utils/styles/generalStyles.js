@@ -12,26 +12,26 @@ export const Button = styled.button`
   cursor: pointer;
 
   ${(props) =>
-    props.isSecondary &&
+    props.issecondary &&
     `
     padding: 16px 20px;
   `}
   ${(props) =>
-    props.isOutline &&
+    props.isoutline &&
     `
-    background-color: ${colors.secondary};
+    background-color: ${colors.white};
     border: 1px solid ${colors.primary};
     color: ${colors.primary};
-    margin-right:32px;
+    margin-right:24px;
   `}
 
   &:hover {
     background-color: ${colors.primaryDark};
 
     ${(props) =>
-      props.isOutline &&
+      props.isoutline &&
       `
-    color: ${colors.secondary};
+    color: ${colors.white};
     
   `}
   }

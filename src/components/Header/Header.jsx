@@ -3,13 +3,16 @@ import {
   HeaderLink,
   HeaderLogo,
   HeaderNav,
-  HeaderProfile,
   HeaderWrapper,
 } from "./HeaderStyle";
 
 import imgSrc from "./../../assets/images/logo.png";
+import { Button } from "../../utils/styles/generalStyles";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <HeaderWrapper>
@@ -17,9 +20,13 @@ const Header = () => {
           <HeaderLogo src={imgSrc} />
           <HeaderNav>
             <HeaderLink to="/">Home</HeaderLink>
-            <HeaderLink to="/">Hello</HeaderLink>
+            <HeaderLink to="/product">Products</HeaderLink>
+            <HeaderLink to="/bmi">BMI calculator</HeaderLink>
+            <Button onClick={() => navigate("/")} isoutline="true">
+              Sign in
+            </Button>
+            <Button onClick={() => navigate("/")}>Register</Button>
           </HeaderNav>
-          <HeaderProfile>Profile</HeaderProfile>
         </HeaderInner>
       </HeaderWrapper>
     </>

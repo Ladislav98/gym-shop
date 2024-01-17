@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "../../utils/styles/theme";
+import { breakpoints, colors } from "../../utils/styles/theme";
 import { NavLink } from "react-router-dom";
 
 export const HeaderWrapper = styled.header`
@@ -14,17 +14,32 @@ export const HeaderInner = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 80px;
-  padding: 12px;
+  padding: 0 24px;
 `;
 
 export const HeaderLogo = styled.img``;
-export const HeaderNav = styled.nav``;
+export const HeaderNav = styled.nav`
+  display: none;
+
+  @media screen and (${breakpoints.desktop}) {
+    display: flex;
+    align-items: center;
+  }
+`;
 
 export const HeaderLink = styled(NavLink)`
   font-size: 16px;
-  font-weight: 600;
-  color: ${colors.primary};
-  margin-right: 20px;
-`;
+  color: ${colors.black};
+  margin-right: 32px;
+  transition: color 0.3s ease-out;
 
-export const HeaderProfile = styled.p``;
+  &:hover {
+    color: ${colors.primaryDark};
+    font-weight: 500;
+  }
+  &.active {
+    color: ${colors.primary};
+    font-weight: 600;
+    text-decoration: underline;
+  }
+`;
