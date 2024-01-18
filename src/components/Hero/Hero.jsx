@@ -28,7 +28,7 @@ const Hero = () => {
             <HeroSubtitle>
               Fuel Your Fire, Shape Your Story. Elevate your fitness game.
             </HeroSubtitle>
-            <Button onClick={() => navigate("/courses")} issecondary="true">
+            <Button onClick={() => navigate("/products")} issecondary="true">
               Explore products
             </Button>
           </HeroTextCard>

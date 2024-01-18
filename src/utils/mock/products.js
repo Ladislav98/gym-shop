@@ -5,13 +5,14 @@ import ProductImg4 from "./../../assets/images/creatinemon.jpg";
 import ProductImg5 from "./../../assets/images/creatine.jpg";
 import ProductImg6 from "./../../assets/images/creatine.jpg";
 
-export const productsMock = [
+const productsMock = [
   {
     id: 1,
     imgSrc: ProductImg1,
     imgAlt: "produkt 1",
     title: "Creatine",
     price: "100€",
+    content: "Hi hello",
   },
   {
     id: 2,
@@ -50,3 +51,5 @@ export const productsMock = [
     price: "60€",
   },
 ];
+
+export default productsMock;
