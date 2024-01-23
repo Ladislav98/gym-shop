@@ -4,6 +4,7 @@ import {
   HeaderLogo,
   HeaderNav,
   HeaderWrapper,
+  ShoppingCart,
 } from "./HeaderStyle";
 
 import imgSrc from "./../../assets/images/logo.png";
@@ -22,6 +23,9 @@ const Header = () => {
             <HeaderLink to="/">Home</HeaderLink>
             <HeaderLink to="/products">Products</HeaderLink>
             <HeaderLink to="/bmi">BMI calculator</HeaderLink>
+            <HeaderLink to="/shopping-cart">
+              <ShoppingCart />
+            </HeaderLink>
             <Button onClick={() => navigate("/")} isoutline="true">
               Sign in
             </Button>

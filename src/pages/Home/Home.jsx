@@ -17,7 +17,12 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <Section title={"Shop"} subtitle={"Shop sub"}>
+      <Section
+        title={"Elevate your workout fuel"}
+        subtitle={
+          "Explore our top-recommended supplements or dive into the full range. If nothing strikes you here, uncover more on our supplements page."
+        }
+      >
         {products && (
           <Grid>
             {products.map(

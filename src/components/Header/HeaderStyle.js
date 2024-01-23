@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { breakpoints, colors } from "../../utils/styles/theme";
 import { NavLink } from "react-router-dom";
+import Cart from "../../assets/images/shop.svg?react";
 
 export const HeaderWrapper = styled.header`
   background-color: ${colors.secondary};
@@ -42,4 +43,10 @@ export const HeaderLink = styled(NavLink)`
     font-weight: 600;
     text-decoration: underline;
   }
+`;
+
+export const ShoppingCart = styled(Cart)`
+  display: block;
+  width: 24px;
+  height: 24px;
 `;
