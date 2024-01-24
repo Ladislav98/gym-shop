@@ -11,8 +11,10 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="products/" element={<AllProducts />} />
-          <Route path="products/:id/" element={<ProductPage />} />
+          <Route path="/products/" element={<AllProducts />} />
+          <Route path="/products/:id/" element={<ProductPage />} />
+          <Route path="/bmi" element={<Home />} />
+          <Route path="/shopping-cart" element={<Home />} />
         </Routes>
       </main>
     </>

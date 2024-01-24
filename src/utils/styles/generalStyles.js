@@ -25,14 +25,25 @@ export const Button = styled.button`
     margin-right:24px;
   `}
 
+${(props) =>
+    props.isadded &&
+    `
+    background-color: #e85a71;
+    `}
+
   &:hover {
     background-color: ${colors.primaryDark};
 
     ${(props) =>
       props.isoutline &&
       `
-    color: ${colors.white};
-    
+    color: ${colors.white}; 
+  `}
+
+    ${(props) =>
+      props.isadded &&
+      `
+    background-color: #ba485a; 
   `}
   }
 `;

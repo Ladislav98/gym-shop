@@ -1,12 +1,8 @@
 import styled from "styled-components";
-import { breakpoints, colors } from "../../utils/styles/theme";
+import { breakpoints } from "../../utils/styles/theme";
 
-export const Section = styled.section`
-  background-color: ${colors.bgPrimary};
-`;
-export const SectionSecondary = styled.section`
-  background-color: ${colors.bgSecondary};
-`;
+export const Section = styled.section``;
+
 export const SectionInner = styled.div`
   padding: 64px 24px;
 
@@ -22,6 +18,7 @@ export const SectionInner = styled.div`
     max-width: 1280px;
   }
 `;
+
 export const SectionTitle = styled.h2`
   max-width: 550px;
   margin: 0 auto;
@@ -41,7 +38,6 @@ export const SectionSubtitle = styled.p`
   max-width: 700px;
   margin: 0 auto;
   text-align: center;
-  color: ${colors.textSecondary};
   font-size: 16px;
   margin-bottom: 48px;
 `;
