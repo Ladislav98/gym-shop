@@ -3,6 +3,7 @@ import Home from "./pages/Home/Home";
 import Header from "./components/Header/Header";
 import { ProductPage } from "./pages/ProductPage/ProductPage";
 import AllProducts from "./pages/AllProducts/AllProducts";
+import { CartItemsList } from "./pages/CartItemsList/CartItemsList";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
           <Route path="/products/" element={<AllProducts />} />
           <Route path="/products/:id/" element={<ProductPage />} />
           <Route path="/bmi" element={<Home />} />
-          <Route path="/shopping-cart" element={<Home />} />
+          <Route path="/shopping-cart" element={<CartItemsList />} />
         </Routes>
       </main>
     </>

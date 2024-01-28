@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Button } from "../../utils/styles/generalStyles";
 import {
   ProductContent,
@@ -9,9 +8,7 @@ import {
 } from "./SingleProductStyle";
 import PropTypes from "prop-types";
 
-const SingleProduct = ({ imgSrc, imgAlt, content }) => {
-  const [press, setPress] = useState(0);
-
+const SingleProduct = ({ imgSrc, imgAlt, content, onAddToCart }) => {
   return (
     <ProductContent>
       <ProductFigure>
@@ -19,8 +16,8 @@ const SingleProduct = ({ imgSrc, imgAlt, content }) => {
       </ProductFigure>
       <ProductInfo>
         <ProductDescription>{content}</ProductDescription>
-        <Button isadded onClick={() => setPress((press) => press + 1)}>
-          Add to cart {press}
+        <Button isadded="true" onClick={onAddToCart}>
+          Add to cart
         </Button>
       </ProductInfo>
     </ProductContent>
@@ -31,6 +28,7 @@ SingleProduct.propTypes = {
   imgSrc: PropTypes.string,
   imgAlt: PropTypes.string,
   content: PropTypes.string,
+  onAddToCart: PropTypes.func,
 };
 
 export default SingleProduct;
