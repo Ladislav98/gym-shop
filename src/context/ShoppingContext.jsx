@@ -7,6 +7,8 @@ const ShoppingProvider = (props) => {
   const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (item) => {
+    console.log("Adding item to cart:", item);
+
     const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id);
 
     if (isItemInCart) {
@@ -23,6 +25,8 @@ const ShoppingProvider = (props) => {
   };
 
   const removeFromCart = (item) => {
+    console.log("Removing item from cart:", item);
+
     const newCartItems = cartItems.map((cartItem) =>
       cartItem.id === item.id && cartItem.quantity > 1
         ? { ...cartItem, quantity: cartItem.quantity - 1 }
@@ -34,6 +38,13 @@ const ShoppingProvider = (props) => {
 
   const clearCart = () => {
     setCartItems([]);
+  };
+
+  const getCartTotal = () => {
+    return cartItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
   };
 
   useEffect(() => {
@@ -49,7 +60,7 @@ const ShoppingProvider = (props) => {
 
   return (
     <ShoppingContext.Provider
-      value={{ cartItems, addToCart, removeFromCart, clearCart }}
+      value={{ cartItems, addToCart, removeFromCart, clearCart, getCartTotal }}
     >
       {props.children}
     </ShoppingContext.Provider>

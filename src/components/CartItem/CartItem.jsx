@@ -1,27 +1,20 @@
 import { useContext } from "react";
 import {
+  CartInput,
   CartButton,
   CartFigure,
   CartItemImg,
   CartPrice,
   CartTitle,
   CartWrapper,
-} from "./CartStyle";
+} from "./CartItemStyle";
 import { ShoppingContext } from "../../context/ShoppingContext";
 
-export const Cart = () => {
+export const CartItem = () => {
   const { cartItems, removeFromCart, addToCart } = useContext(ShoppingContext);
 
-  const handleRemove = (item) => {
-    removeFromCart(item);
-  };
-
-  const handleAdd = (item) => {
-    addToCart(item);
-  };
-
   return (
-    <div>
+    <>
       {cartItems.map((item) => (
         <CartWrapper key={item.id}>
           <CartFigure>
@@ -29,10 +22,14 @@ export const Cart = () => {
           </CartFigure>
           <CartTitle>{item.title}</CartTitle>
           <CartPrice>${item.price}</CartPrice>
-          <CartButton onClick={() => handleRemove(item)}>-</CartButton>
-          <CartButton onClick={() => handleAdd(item)}>+</CartButton>
+          <CartButton onClick={() => removeFromCart(item)}>-</CartButton>
+          <CartInput
+            value={item.quantity}
+            onChange={(e) => e.target.value} //treba izmjenit
+          ></CartInput>
+          <CartButton onClick={() => addToCart(item)}>+</CartButton>
         </CartWrapper>
       ))}
-    </div>
+    </>
   );
 };
