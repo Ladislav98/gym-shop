@@ -4,7 +4,7 @@ import {
   ProductImage,
   ProductPrice,
   ProductTitle,
-  Product as ProductWrapper,
+  ProductWrapper,
 } from "./ProductStyle";
 import PropTypes from "prop-types";
 

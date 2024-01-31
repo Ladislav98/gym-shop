@@ -4,7 +4,7 @@ import { Grid } from "../../utils/styles/generalStyles";
 import { useState, useEffect } from "react";
 import productsMock from "../../utils/mock/products";
 
-function Courses() {
+function AllProducts() {
   const [products, setProducts] = useState(null);
 
   useEffect(() => {
@@ -39,4 +39,4 @@ function Courses() {
   );
 }
 
-export default Courses;
+export default AllProducts;

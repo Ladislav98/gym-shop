@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colors } from "../../utils/styles/theme";
 
-export const Product = styled.div`
+export const ProductWrapper = styled.div`
   border-radius: 6px;
   padding: 20px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);

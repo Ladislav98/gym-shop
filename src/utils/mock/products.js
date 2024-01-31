@@ -56,10 +56,9 @@ const productsMock = [
     id: 6,
     imgSrc: ProductImg6,
     imgAlt: "produkt 6",
-    title: "Creatine Monohydrate",
+    title: "Vitamin A",
     price: "60€",
-    content:
-      "Harness the power of nature with our Pure Green Tea Extract. Packed with antioxidants, this supplement is your key to supporting overall well-being. Green tea extract has been associated with numerous health benefits, including enhanced metabolism, improved cognitive function, and a boost to your body's natural defenses.",
+    content: "Get more Vitamin A with our product.",
   },
 ];
 
