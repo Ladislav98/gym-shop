@@ -1,11 +1,13 @@
 import Section from "../../components/Section/Section";
 import Product from "../../components/Product/Product";
 import { Grid } from "../../utils/styles/generalStyles";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import productsMock from "../../utils/mock/products";
+import { ShoppingContext } from "../../context/ShoppingContext";
 
 function AllProducts() {
   const [products, setProducts] = useState(null);
+  const { addToCart } = useContext(ShoppingContext);
 
   useEffect(() => {
     setTimeout(() => {
@@ -27,9 +29,9 @@ function AllProducts() {
                 imgSrc={product.imgSrc}
                 imgAlt={product.imgAlt}
                 title={product.title}
-                subtitle={product.subtitle}
-                time={product.time}
+                price={product.price}
                 id={product.id}
+                addToCart={() => addToCart(product)}
               />
             ))}
           </Grid>

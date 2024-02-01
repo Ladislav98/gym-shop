@@ -23,19 +23,13 @@ export const ProductPage = () => {
       setProduct(products.find((product) => product.id === parseInt(id)));
   }, [products]);
 
-  const handleAddtoCart = () => {
-    if (product) {
-      addToCart(product);
-    }
-  };
-
   return !product ? null : (
     <Section title={product.title}>
       <SingleProduct
         imgSrc={product.imgSrc}
         imgAlt={product.imgAlt}
         content={product.content}
-        onAddToCart={handleAddtoCart}
+        onAddToCart={() => addToCart(product)}
       />
     </Section>
   );

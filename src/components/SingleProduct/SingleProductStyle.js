@@ -3,7 +3,6 @@ import { breakpoints } from "../../utils/styles/theme";
 
 export const ProductContent = styled.article`
   @media screen and (${breakpoints.tablet}) {
-    padding-top: 48px;
     display: flex;
     justify-content: space-between;
   }

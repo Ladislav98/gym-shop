@@ -3,7 +3,7 @@ import Home from "./pages/Home/Home";
 import Header from "./components/Header/Header";
 import { ProductPage } from "./pages/ProductPage/ProductPage";
 import AllProducts from "./pages/AllProducts/AllProducts";
-import { ShoppingCartItemsList } from "./pages/ShoppingCartItems/ShoppingCartItems";
+import { ShoppingCartItemsList } from "./pages/ShoppingCartItemsList/ShoppingCartItemsList";
 
 function App() {
   return (
