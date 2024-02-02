@@ -4,6 +4,7 @@ import productsMock from "../../utils/mock/products";
 import Section from "../../components/Section/Section";
 import SingleProduct from "../../components/SingleProduct/SingleProduct";
 import { ShoppingContext } from "../../context/ShoppingContext";
+import LoaderSpinner from "../../components/LoaderSpinner/LoaderSpinner";
 
 export const ProductPage = () => {
   const { id } = useParams();
@@ -11,10 +12,12 @@ export const ProductPage = () => {
 
   const [products, setProducts] = useState(null);
   const [product, setProduct] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
       setProducts(productsMock);
+      setIsLoading(false);
     }, 1000);
   }, []);
 
@@ -22,6 +25,8 @@ export const ProductPage = () => {
     products &&
       setProduct(products.find((product) => product.id === parseInt(id)));
   }, [products]);
+
+  if (isLoading) return <LoaderSpinner />;
 
   return !product ? null : (
     <Section title={product.title}>

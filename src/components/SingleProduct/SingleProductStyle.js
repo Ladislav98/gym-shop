@@ -23,7 +23,7 @@ export const ProductFigure = styled.figure`
   }
   @media screen and (${breakpoints.desktop}) {
     width: 500px;
-    height: 450px;
+    height: 370px;
     margin-right: 60px;
   }
 `;

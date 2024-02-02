@@ -12,6 +12,9 @@ export const FlexItems = styled.div`
     align-items: center;
     justify-content: center;
   }
+  @media screen and (${breakpoints.desktop}) {
+    margin-top: 24px;
+  }
 `;
 
 export const TotalItems = styled.div`
