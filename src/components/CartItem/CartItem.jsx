@@ -8,6 +8,8 @@ import {
   CartPrice,
   CartTitle,
   CartWrapper,
+  CartInfo,
+  CartQuantity,
 } from "./CartItemStyle";
 import { ShoppingContext } from "../../context/ShoppingContext";
 
@@ -19,14 +21,15 @@ export const CartItem = ({ item }) => {
       <CartFigure>
         <CartItemImg src={item.imgSrc} alt={item.imgAlt} />
       </CartFigure>
-      <CartTitle>{item.title}</CartTitle>
-      <CartPrice>${item.price}</CartPrice>
-      <CartButton onClick={() => removeFromCart(item)}>-</CartButton>
-      <CartInput
-        value={item.quantity}
-        onChange={(e) => e.target.value} // Needs to be updated
-      ></CartInput>
-      <CartButton onClick={() => addToCart(item)}>+</CartButton>
+      <CartInfo>
+        <CartTitle>{item.title}</CartTitle>
+        <CartPrice>€{item.price}</CartPrice>
+      </CartInfo>
+      <CartQuantity>
+        <CartButton onClick={() => removeFromCart(item)}>-</CartButton>
+        <CartInput value={item.quantity}></CartInput>
+        <CartButton onClick={() => addToCart(item)}>+</CartButton>
+      </CartQuantity>
     </CartWrapper>
   );
 };
@@ -36,7 +39,7 @@ CartItem.propTypes = {
     imgSrc: PropTypes.string,
     imgAlt: PropTypes.string,
     title: PropTypes.string,
-    price: PropTypes.string,
+    price: PropTypes.number,
     quantity: PropTypes.number,
   }),
 };

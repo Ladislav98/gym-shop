@@ -24,7 +24,7 @@ const ShoppingProvider = (props) => {
 
   const removeFromCart = (item) => {
     const newCartItems = cartItems.map((cartItem) =>
-      cartItem.id === item.id && cartItem.quantity > 1
+      cartItem.id === item.id
         ? { ...cartItem, quantity: cartItem.quantity - 1 }
         : cartItem
     );
@@ -38,7 +38,7 @@ const ShoppingProvider = (props) => {
 
   const getCartTotal = () => {
     return cartItems.reduce(
-      (total, item) => total + item.price * item.quantity,
+      (total, currentItem) => total + currentItem.price * currentItem.quantity,
       0
     );
   };

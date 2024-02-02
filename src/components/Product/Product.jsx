@@ -34,9 +34,9 @@ const Product = ({ imgSrc, price, title, imgAlt, id }) => {
             <ProductImage src={imgSrc} alt={imgAlt} />
           </ProductFigure>
           <ProductTitle>{title}</ProductTitle>
-          <ProductPrice>{price}</ProductPrice>
+          <ProductPrice>€{price}</ProductPrice>
         </Link>
-        <Button onClick={handleAddToCart}>Add to cart bato</Button>
+        <Button onClick={handleAddToCart}>Add to cart</Button>
       </ProductWrapper>
     </>
   );
@@ -46,7 +46,7 @@ Product.propTypes = {
   imgSrc: PropTypes.string,
   imgAlt: PropTypes.string,
   title: PropTypes.string,
-  price: PropTypes.string,
+  price: PropTypes.number,
   id: PropTypes.number,
 };
 
