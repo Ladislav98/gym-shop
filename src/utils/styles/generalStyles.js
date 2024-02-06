@@ -16,6 +16,20 @@ export const Button = styled.button`
     `
     padding: 16px 20px;
   `}
+
+  ${(props) =>
+    props.isbmi &&
+    `
+    padding:8px 16px;
+    background-color:#03A9F4;
+  `}
+  ${(props) =>
+    props.isbmireset &&
+    `
+    padding:8px 16px;
+    background-color:#607D8B;
+  `}
+
   ${(props) =>
     props.isoutline &&
     `
@@ -44,6 +58,17 @@ ${(props) =>
       props.isadded &&
       `
     background-color: #ba485a; 
+  `}
+
+    ${(props) =>
+      props.isbmi &&
+      `
+    background-color: #B3E5FC; 
+  `}
+    ${(props) =>
+      props.isbmireset &&
+      `
+    background-color: #0d202b; 
   `}
   }
 `;
