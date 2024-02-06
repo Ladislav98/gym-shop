@@ -32,7 +32,7 @@ const Header = () => {
             <Button onClick={() => navigate("/")} isoutline="true">
               Sign in
             </Button>
-            <Button onClick={() => navigate("/")}>Register</Button>
+            <Button onClick={() => navigate("/register")}>Register</Button>
           </HeaderNav>
         </HeaderInner>
       </HeaderWrapper>
