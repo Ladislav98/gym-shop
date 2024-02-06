@@ -15,10 +15,14 @@ import {
   WeightCard,
 } from "./BmiCalculatorStyle";
 import { Button } from "../../utils/styles/generalStyles";
+import LoaderSpinner from "../LoaderSpinner/LoaderSpinner";
 
 const BmiCalculator = () => {
   const [weight, setWeight] = useState(0);
   const [height, setHeight] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
+  const [show, setShow] = useState(false);
+
   function handleAddHeight() {
     setHeight(() => height + 1);
   }
@@ -39,6 +43,16 @@ const BmiCalculator = () => {
   function handleReset() {
     setWeight(0);
     setHeight(0);
+    setShow(false);
+  }
+
+  function handleCalculate() {
+    if (weight === 0 || height === 0) return alert("Enter weight and height.");
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      setShow(!show);
+    }, 2000);
   }
 
   function BMItotal() {
@@ -75,21 +89,26 @@ const BmiCalculator = () => {
           </CalcRow>
         </WeightCard>
         <HandleButtonStyle>
-          <Button isbmi="true">Calculate</Button>
+          <Button isbmi="true" onClick={handleCalculate}>
+            Calculate
+          </Button>
           <Button isbmireset="true" onClick={handleReset}>
             Reset
           </Button>
         </HandleButtonStyle>
-        <TotalBmi>{bmi}</TotalBmi>
+        {show && <TotalBmi>BMI: {bmi}</TotalBmi>}
       </CalculatorWrapper>
 
       <CategoryBmi>
-        <CategoryBmiResult>
-          {bmi < 18.5 && "Underweight"}
-          {bmi >= 18.5 && bmi < 25 && "Healthy"}
-          {bmi < 30 && bmi > 25 && "Overweight"}
-          {bmi > 30 && "Obese"}
-        </CategoryBmiResult>
+        {isLoading && <LoaderSpinner />}
+        {!isLoading && show && (
+          <CategoryBmiResult>
+            {bmi < 18.5 && "Underweight"}
+            {bmi >= 18.5 && bmi < 25 && "Healthy"}
+            {bmi < 30 && bmi > 25 && "Overweight"}
+            {bmi > 30 && "Obese"}
+          </CategoryBmiResult>
+        )}
       </CategoryBmi>
     </>
   );

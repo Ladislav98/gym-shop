@@ -3,7 +3,6 @@ import { colors } from "./../../utils/styles/theme";
 
 export const CalculatorWrapper = styled.div`
   width: 300px;
-  height: 390px;
   padding: 30px;
   gap: 18px;
 
