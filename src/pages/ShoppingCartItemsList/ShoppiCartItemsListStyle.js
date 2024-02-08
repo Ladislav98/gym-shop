@@ -5,8 +5,6 @@ export const FlexItems = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
-  /* border-top: 1px solid grey;
-  border-bottom: 1px solid grey; */
 
   @media screen and (${breakpoints.tablet}) {
     align-items: center;

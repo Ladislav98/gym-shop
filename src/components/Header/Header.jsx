@@ -29,7 +29,7 @@ const Header = () => {
             <HeaderLink to="/shopping-cart">
               <ShoppingCart /> ({cartItems.length})
             </HeaderLink>
-            <Button onClick={() => navigate("/")} isoutline="true">
+            <Button onClick={() => navigate("/sign-in")} isoutline="true">
               Sign in
             </Button>
             <Button onClick={() => navigate("/register")}>Register</Button>

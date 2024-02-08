@@ -6,6 +6,7 @@ import AllProducts from "./pages/AllProducts/AllProducts";
 import { ShoppingCartItemsList } from "./pages/ShoppingCartItemsList/ShoppingCartItemsList";
 import BmiPage from "./pages/BmiPage/BmiPage";
 import Register from "./pages/Register/Register";
+import SignIn from "./pages/SingIn/SignIn";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/bmi" element={<BmiPage />} />
           <Route path="/shopping-cart" element={<ShoppingCartItemsList />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/sign-in" element={<SignIn />} />
         </Routes>
       </main>
     </>
