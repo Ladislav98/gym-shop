@@ -11,10 +11,12 @@ import {
   FormSuccessMessage,
 } from "../../utils/styles/generalStyles";
 import { AuthContext } from "./../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
   const [successMessage, setSuccessMessage] = useState(null);
-  const { setIsLoggedIn, setIsAdmin } = useContext(AuthContext);
+  const { isLoggedIn, setIsLoggedIn, setIsAdmin } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   return (
     <Section title="Sign in">
@@ -69,7 +71,6 @@ const SignIn = () => {
             }
 
             resetForm();
-
             setTimeout(() => {
               setSuccessMessage(null);
             }, 2000);
@@ -79,7 +80,6 @@ const SignIn = () => {
               message: "User is not logged in successfully ",
             });
           } finally {
-            // Set submitting to false
             setSubmitting(false);
           }
         }}
@@ -113,13 +113,17 @@ const SignIn = () => {
             </FormRow>
 
             <FormRow>
-              <Button
-                issecondary="true"
-                type="submit"
-                disabled={formik.isSubmitting}
-              >
-                {formik.isSubmitting ? "Processing..." : "Sign in"}
-              </Button>
+              {!isLoggedIn ? (
+                <Button
+                  issecondary="true"
+                  type="submit"
+                  disabled={formik.isSubmitting}
+                >
+                  {formik.isSubmitting ? "Processing..." : "Sign in"}
+                </Button>
+              ) : (
+                <Button onClick={() => navigate("/")}>Start Shopping</Button>
+              )}
             </FormRow>
           </Form>
         )}

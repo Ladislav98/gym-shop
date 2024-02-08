@@ -12,10 +12,19 @@ import { Button } from "../../utils/styles/generalStyles";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { ShoppingContext } from "../../context/ShoppingContext";
+import { AuthContext } from "../../context/AuthContext";
 
 const Header = () => {
   const navigate = useNavigate();
   const { cartItems } = useContext(ShoppingContext);
+  const { isLoggedIn, setIsLoggedIn, setIsAdmin } = useContext(AuthContext);
+
+  function handleLogOut() {
+    setIsAdmin(false);
+    setIsLoggedIn(false);
+    localStorage.clear();
+    navigate("/");
+  }
 
   return (
     <>
@@ -29,10 +38,15 @@ const Header = () => {
             <HeaderLink to="/shopping-cart">
               <ShoppingCart /> ({cartItems.length})
             </HeaderLink>
-            <Button onClick={() => navigate("/sign-in")} isoutline="true">
-              Sign in
-            </Button>
-            <Button onClick={() => navigate("/register")}>Register</Button>
+            {!isLoggedIn && (
+              <Button onClick={() => navigate("/sign-in")} isoutline="true">
+                Sign in
+              </Button>
+            )}
+            {!isLoggedIn && (
+              <Button onClick={() => navigate("/register")}>Register</Button>
+            )}
+            {isLoggedIn && <Button onClick={handleLogOut}>Log out</Button>}
           </HeaderNav>
         </HeaderInner>
       </HeaderWrapper>
