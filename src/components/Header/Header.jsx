@@ -42,10 +42,6 @@ const Header = () => {
       path: "/products",
     },
     {
-      title: "BMI",
-      path: "/bmi",
-    },
-    {
       title: "Cart",
       path: "/shopping-cart",
     },
@@ -78,6 +74,8 @@ const Header = () => {
           <Hamburger onClick={handleOpen} />
           {isOpen && (
             <HamburgerMenu
+              onLogOut={handleLogOut}
+              isLoggedIn={isLoggedIn}
               onOpen={handleOpen}
               isOpen={isOpen}
               hamburgerItems={hamburgerItems}

@@ -22,7 +22,7 @@ export const HamburgerNav = styled.nav`
   position: fixed;
   top: 0;
   right: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
-  transition: ${({ isOpen }) => (isOpen ? "350ms ease" : "850ms ease")};
+  transition: ${({ isOpen }) => (isOpen ? "350ms ease-in-out" : "850ms")};
   z-index: 2;
 
   @media screen and (${breakpoints.desktop}) {
@@ -53,6 +53,7 @@ export const HamburgerItem = styled(NavLink)`
 
   &:hover {
     background-color: ${colors.white};
+    border-radius: 4px;
     color: ${colors.primary};
     font-weight: 700;
   }
