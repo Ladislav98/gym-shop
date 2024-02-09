@@ -10,11 +10,14 @@ import {
 import imgSrc from "./../../assets/images/logo.png";
 import { Button } from "../../utils/styles/generalStyles";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ShoppingContext } from "../../context/ShoppingContext";
 import { AuthContext } from "../../context/AuthContext";
+import { Hamburger } from "../HamburgerMenu/HamburgerMenuStyle";
+import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const { cartItems } = useContext(ShoppingContext);
   const { isLoggedIn, setIsLoggedIn, setIsAdmin } = useContext(AuthContext);
@@ -26,11 +29,35 @@ const Header = () => {
     navigate("/");
   }
 
+  function handleOpen() {
+    setIsOpen(!isOpen);
+  }
+  const hamburgerItems = [
+    {
+      title: "Home",
+      path: "/",
+    },
+    {
+      title: "Products",
+      path: "/products",
+    },
+    {
+      title: "BMI",
+      path: "/bmi",
+    },
+    {
+      title: "Cart",
+      path: "/shopping-cart",
+    },
+  ];
+
   return (
     <>
       <HeaderWrapper>
         <HeaderInner>
-          <HeaderLogo src={imgSrc} />
+          <HeaderLink to={"/"}>
+            <HeaderLogo src={imgSrc} />
+          </HeaderLink>
           <HeaderNav>
             <HeaderLink to="/">Home</HeaderLink>
             <HeaderLink to="/products">Products</HeaderLink>
@@ -48,6 +75,14 @@ const Header = () => {
             )}
             {isLoggedIn && <Button onClick={handleLogOut}>Log out</Button>}
           </HeaderNav>
+          <Hamburger onClick={handleOpen} />
+          {isOpen && (
+            <HamburgerMenu
+              onOpen={handleOpen}
+              isOpen={isOpen}
+              hamburgerItems={hamburgerItems}
+            />
+          )}
         </HeaderInner>
       </HeaderWrapper>
     </>
