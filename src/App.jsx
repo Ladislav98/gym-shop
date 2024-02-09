@@ -7,6 +7,7 @@ import { ShoppingCartItemsList } from "./pages/ShoppingCartItemsList/ShoppingCar
 import BmiPage from "./pages/BmiPage/BmiPage";
 import Register from "./pages/Register/Register";
 import SignIn from "./pages/SingIn/SignIn";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 
 function App() {
   return (
@@ -17,7 +18,14 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/products/" element={<AllProducts />} />
           <Route path="/products/:id/" element={<ProductPage />} />
-          <Route path="/bmi" element={<BmiPage />} />
+          <Route
+            path="/bmi"
+            element={
+              <ProtectedRoute>
+                <BmiPage />
+              </ProtectedRoute>
+            }
+          />
           <Route path="/shopping-cart" element={<ShoppingCartItemsList />} />
           <Route path="/register" element={<Register />} />
           <Route path="/sign-in" element={<SignIn />} />

@@ -57,7 +57,7 @@ const Header = () => {
           <HeaderNav>
             <HeaderLink to="/">Home</HeaderLink>
             <HeaderLink to="/products">Products</HeaderLink>
-            <HeaderLink to="/bmi">BMI calculator</HeaderLink>
+            {isLoggedIn && <HeaderLink to="/bmi">BMI calculator</HeaderLink>}
             <HeaderLink to="/shopping-cart">
               <ShoppingCart /> ({cartItems.length})
             </HeaderLink>
