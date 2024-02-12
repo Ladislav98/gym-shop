@@ -21,6 +21,18 @@ export const ProductPage = () => {
     }, 1000);
   }, []);
 
+  useEffect(
+    function () {
+      if (!product) return;
+      document.title = `Gym ZE | ${product.title}`;
+
+      return function () {
+        document.title = "Gym ZE";
+      };
+    },
+    [product]
+  );
+
   useEffect(() => {
     products &&
       setProduct(products.find((product) => product.id === parseInt(id)));

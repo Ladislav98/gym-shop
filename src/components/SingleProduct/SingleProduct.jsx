@@ -1,5 +1,7 @@
+import { useNavigate } from "react-router-dom";
 import { Button } from "../../utils/styles/generalStyles";
 import {
+  ButtonWrapper,
   ProductContent,
   ProductDescription,
   ProductFigure,
@@ -9,6 +11,8 @@ import {
 import PropTypes from "prop-types";
 
 const SingleProduct = ({ imgSrc, imgAlt, content, onAddToCart }) => {
+  const navigate = useNavigate();
+
   return (
     <ProductContent>
       <ProductFigure>
@@ -16,9 +20,12 @@ const SingleProduct = ({ imgSrc, imgAlt, content, onAddToCart }) => {
       </ProductFigure>
       <ProductInfo>
         <ProductDescription>{content}</ProductDescription>
-        <Button isadded="true" onClick={onAddToCart}>
-          Add to cart
-        </Button>
+        <ButtonWrapper>
+          <Button onClick={() => navigate("/products")}>Go back</Button>
+          <Button isadded="true" onClick={onAddToCart}>
+            Add to cart
+          </Button>
+        </ButtonWrapper>
       </ProductInfo>
     </ProductContent>
   );

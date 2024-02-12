@@ -33,10 +33,6 @@ export const ProductInfo = styled.div`
   flex-direction: column;
   gap: 18px;
   justify-content: space-between;
-
-  @media screen and (${breakpoints.desktop}) {
-    align-items: flex-end;
-  }
 `;
 
 export const ProductImage = styled.img`
@@ -48,4 +44,11 @@ export const ProductImage = styled.img`
 export const ProductDescription = styled.p`
   font-size: 16px;
   line-height: 150%;
+`;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 `;
