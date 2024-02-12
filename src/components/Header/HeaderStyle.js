@@ -18,7 +18,10 @@ export const HeaderInner = styled.div`
   padding: 0 24px;
 `;
 
-export const HeaderLogo = styled.img``;
+export const HeaderLogo = styled.img`
+  width: 100%;
+  height: 64px;
+`;
 export const HeaderNav = styled.nav`
   display: none;
 
@@ -45,8 +48,23 @@ export const HeaderLink = styled(NavLink)`
   }
 `;
 
+export const ShoppingCartArea = styled.div`
+  position: relative;
+`;
+
 export const ShoppingCart = styled(Cart)`
   display: block;
   width: 24px;
   height: 24px;
+`;
+
+export const CartCounter = styled.span`
+  position: absolute;
+  top: -15px;
+  right: -12px;
+  background-color: #f95959;
+  color: white;
+  border-radius: 12px;
+  width: 24px;
+  text-align: center;
 `;

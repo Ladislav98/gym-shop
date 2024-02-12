@@ -1,10 +1,12 @@
 import {
+  CartCounter,
   HeaderInner,
   HeaderLink,
   HeaderLogo,
   HeaderNav,
   HeaderWrapper,
   ShoppingCart,
+  ShoppingCartArea,
 } from "./HeaderStyle";
 
 import imgSrc from "./../../assets/images/logo.png";
@@ -59,7 +61,10 @@ const Header = () => {
             <HeaderLink to="/products">Products</HeaderLink>
             {isLoggedIn && <HeaderLink to="/bmi">BMI calculator</HeaderLink>}
             <HeaderLink to="/shopping-cart">
-              <ShoppingCart /> ({cartItems.length})
+              <ShoppingCartArea>
+                <ShoppingCart />
+                <CartCounter>{cartItems.length}</CartCounter>
+              </ShoppingCartArea>
             </HeaderLink>
             {!isLoggedIn && (
               <Button onClick={() => navigate("/sign-in")} isoutline="true">
