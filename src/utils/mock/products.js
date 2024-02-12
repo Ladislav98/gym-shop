@@ -60,23 +60,6 @@ const productsMock = [
     price: 60,
     content: "Get more Vitamin A with our product.",
   },
-  {
-    id: 5,
-    imgSrc: ProductImg5,
-    imgAlt: "produkt 5",
-    title: "Green Tea Extract",
-    price: 30,
-    content:
-      "Harness the power of nature with our Pure Green Tea Extract. Packed with antioxidants, this supplement is your key to supporting overall well-being. Green tea extract has been associated with numerous health benefits, including enhanced metabolism, improved cognitive function, and a boost to your body's natural defenses.",
-  },
-  {
-    id: 6,
-    imgSrc: ProductImg6,
-    imgAlt: "produkt 6",
-    title: "Vitamin A",
-    price: 60,
-    content: "Get more Vitamin A with our product.",
-  },
 ];
 
 export default productsMock;
