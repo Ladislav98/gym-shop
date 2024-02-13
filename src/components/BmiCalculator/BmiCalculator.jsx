@@ -24,19 +24,19 @@ const BmiCalculator = () => {
   const [show, setShow] = useState(false);
 
   function handleAddHeight() {
-    setHeight(() => height + 1);
+    setHeight((h) => h + 1);
   }
   function handleDecreaseHeight() {
     if (height) {
-      setHeight(() => height - 1);
+      setHeight((h) => h - 1);
     }
   }
   function handleAddWeight() {
-    setWeight(() => weight + 1);
+    setWeight((w) => w + 1);
   }
   function handleDecreaseWweight() {
     if (weight > 0) {
-      setWeight(() => weight - 1);
+      setWeight((w) => w - 1);
     }
   }
 
@@ -51,7 +51,7 @@ const BmiCalculator = () => {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      setShow(!show);
+      setShow(true);
     }, 2000);
   }
 
