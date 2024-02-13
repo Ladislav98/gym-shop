@@ -24,6 +24,7 @@ export const TotalItems = styled.div`
   width: 300px;
   border-radius: 8px;
   gap: 12px;
+  margin-bottom: 16px;
 
   @media screen and (${breakpoints.tablet}) {
     width: 400px;
